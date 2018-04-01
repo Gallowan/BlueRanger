@@ -87,7 +87,6 @@
         android:scaleType="fitCenter"
         android:src="@drawable/logo"
         android:visibility="visible" />
-
     <EditText
         android:id="@+id/field_email_address"
         android:layout_width="match_parent"
@@ -96,7 +95,6 @@
         android:layout_centerVertical="true"
         android:hint="Email Address"
         android:inputType="textEmailAddress" />
-
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"

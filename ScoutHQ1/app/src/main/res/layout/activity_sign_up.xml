@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image_blur"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <EditText
+        android:id="@+id/field_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/field_email_address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-292dp"
+        android:hint="What's your name?"
+        android:inputType="text"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/field_email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="292dp"
+        android:hint="Email Address?"
+        android:inputType="textEmailAddress"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/field_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/field_email_address"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Password?"
+        android:inputType="textPassword"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/field_password_reenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/field_password"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Re-enter Password"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="false"
+        android:visibility="visible" />
+
+</RelativeLayout>
