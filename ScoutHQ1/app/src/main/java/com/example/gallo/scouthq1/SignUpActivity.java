@@ -20,10 +20,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch(view.getId())
         {
-            //case R.id.join_btn:
-                //registerUser();
+            case R.id.join_btn:
+//                registerUser();
 
-              //  break;
+                break;
         }
     }
 }

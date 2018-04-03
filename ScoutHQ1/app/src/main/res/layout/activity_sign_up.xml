@@ -11,6 +11,20 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
 
+    <Button
+        android:id="@+id/join_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#ff3b3b"
+        android:text="JOIN"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
     <EditText
         android:id="@+id/field_user_name"
         android:layout_width="match_parent"
