@@ -26,7 +26,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch(view.getId())
         {
             case R.id.login_join_btn:
-                startActivity(new Intent(this, SignUpActivity.class));
+                //startActivity(new Intent(this, SignUpActivity.class));
+
+                Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                LoginActivity.this.startActivity(myIntent);
+
+
                 // Code to display a message to the screen (toast)
                 //Context context = getApplicationContext();
                 //CharSequence text = "Hello toast!";
