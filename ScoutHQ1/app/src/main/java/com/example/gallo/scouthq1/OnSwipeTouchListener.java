@@ -51,6 +51,10 @@ public class OnSwipeTouchListener implements OnTouchListener {
         }
     }
 
+    public GestureDetector getGestureDetector(){
+        return gestureDetector;
+    }
+
     public boolean onSwipeRight() {
         return false;
     }

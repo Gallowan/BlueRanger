@@ -14,9 +14,112 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/btn_ballislife_m"
+            android:id="@+id/btn_basketball_m"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
             app:srcCompat="@drawable/btn_basketball_m" />
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_basketball_f"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_basketball_f" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_baseball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_baseball" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_football"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_football" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_soccer_m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_soccer_m" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_soccer_f"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_soccer_f" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_volleyball_f"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_volleyball_f" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btn_volleyball_m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:scaleX="1.12"
+            app:srcCompat="@drawable/btn_volleyball_m" />
+
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
