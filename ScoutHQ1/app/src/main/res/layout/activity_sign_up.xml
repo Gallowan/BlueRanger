@@ -29,7 +29,7 @@
         android:id="@+id/field_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/field_email_address"
+        android:layout_above="@+id/field_sign_up_email_address"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-292dp"
         android:hint="What's your name?"
@@ -37,7 +37,7 @@
         android:visibility="visible" />
 
     <EditText
-        android:id="@+id/field_email_address"
+        android:id="@+id/field_sign_up_email_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -48,10 +48,10 @@
         android:visibility="visible" />
 
     <EditText
-        android:id="@+id/field_password"
+        android:id="@+id/field_sign_up_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/field_email_address"
+        android:layout_below="@+id/field_sign_up_email_address"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Password?"
@@ -62,7 +62,7 @@
         android:id="@+id/field_password_reenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/field_password"
+        android:layout_below="@+id/field_sign_up_password"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Re-enter Password"

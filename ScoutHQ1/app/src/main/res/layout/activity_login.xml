@@ -88,18 +88,19 @@
         android:src="@drawable/logo"
         android:visibility="visible" />
     <EditText
-        android:id="@+id/field_email_address"
+        android:id="@+id/field_sign_up_email_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:hint="Email Address"
         android:inputType="textEmailAddress" />
+
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/field_login_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/field_email_address"
+        android:layout_below="@+id/field_sign_up_email_address"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Password"
