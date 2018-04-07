@@ -14,8 +14,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import static com.example.gallo.scouthq1.R.id.login_join_btn;
-import static com.example.gallo.scouthq1.R.id.login_btn;
+import static com.example.gallo.scouthq1.R.id.btn_login_join;
+import static com.example.gallo.scouthq1.R.id.btn_login;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -25,17 +25,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState)
     {
 
-        editLoginEmail = (EditText) findViewById(R.id.field_sign_in_email_address);
+        editLoginEmail = (EditText) findViewById(R.id.field_login_email_address);
         editLoginPassword = (EditText) findViewById(R.id.field_login_password);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         //"Join for Free" Button
-        findViewById(login_join_btn).setOnClickListener(this);
+        findViewById(btn_login_join).setOnClickListener(this);
 
         //Login Button
-        findViewById(login_btn).setOnClickListener(this);
+        findViewById(btn_login).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -95,12 +95,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch(view.getId())
         {
-            case R.id.login_join_btn:
+            // Sign up for free button
+            case R.id.btn_login_join:
                 Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
                 LoginActivity.this.startActivity(myIntent);
                 break;
-
-            case R.id.login_btn:
+            // Login button
+            case R.id.btn_login:
                 userLogin();
                 break;
 
