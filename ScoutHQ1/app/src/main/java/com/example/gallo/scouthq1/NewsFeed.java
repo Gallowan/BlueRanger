@@ -10,27 +10,28 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.Reader;
 
 public class NewsFeed extends AppCompatActivity {
 
-    private TextView mText;
+    private ListView mList;
     ArrayAdapter<String> adapter;
     OnSwipeTouchListener onSwipeTouchListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_feed);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.content_news_feed);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mText = (TextView) findViewById(R.id.field_news_feed_content);
-        adapter = new ArrayAdapter<String>(this, R.layout.content_news_feed);
+        mList = findViewById(R.id.field_news_feed_content);
+        adapter = new ArrayAdapter<>(this, R.layout.content_news_feed);
         new GetRssFeed().execute("http://www.espn.com/espn/rss/ncb/news");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,11 +68,22 @@ public class NewsFeed extends AppCompatActivity {
             return null;
         }
 
-/*        @Override
+        @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             adapter.notifyDataSetChanged();
-            mText.setAdapter(adapter);
-        }*/
+            mList.setAdapter(adapter);
+        }
+    }
+
+    public void onClick(View view) {
+        switch(view.getId())
+        {
+            case R.id.fab:
+                Intent newsFeedIntent = new Intent(NewsFeed.this, SportsSelection.class);
+                NewsFeed.this.startActivity(newsFeedIntent);
+                break;
+
+        }
     }
 }

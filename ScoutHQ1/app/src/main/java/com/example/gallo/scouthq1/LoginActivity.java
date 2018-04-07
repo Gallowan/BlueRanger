@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             // Login button
             case R.id.btn_news_feed:
-                Intent newsFeedIntent = new Intent(LoginActivity.this, NewsFeed.class);
+                Intent newsFeedIntent = new Intent(LoginActivity.this, SportsSelection.class);
                 LoginActivity.this.startActivity(newsFeedIntent);
                 break;
 
