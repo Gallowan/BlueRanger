@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import static com.example.gallo.scouthq1.R.id.btn_login_join;
 import static com.example.gallo.scouthq1.R.id.btn_login;
+import static com.example.gallo.scouthq1.R.id.btn_news_feed;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -36,6 +37,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //Login Button
         findViewById(btn_login).setOnClickListener(this);
+
+        //News Feed Button
+        findViewById(btn_news_feed).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -95,14 +99,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch(view.getId())
         {
-            // Sign up for free button
-            case R.id.btn_login_join:
-                Intent myIntent = new Intent(LoginActivity.this, SignUpActivity.class);
-                LoginActivity.this.startActivity(myIntent);
-                break;
             // Login button
             case R.id.btn_login:
                 userLogin();
+                break;
+            // Sign up for free button
+            case R.id.btn_login_join:
+                Intent joinIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+                LoginActivity.this.startActivity(joinIntent);
+                break;
+            // Login button
+            case R.id.btn_news_feed:
+                Intent newsFeedIntent = new Intent(LoginActivity.this, NewsFeed.class);
+                LoginActivity.this.startActivity(newsFeedIntent);
                 break;
 
         }
