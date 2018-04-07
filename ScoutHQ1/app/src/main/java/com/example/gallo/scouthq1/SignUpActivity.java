@@ -1,5 +1,6 @@
 package com.example.gallo.scouthq1;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -33,6 +35,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.join_btn).setOnClickListener(this);
     }
 
+    //Registers user to Firebase Database and test cases
     private void registerUser()
     {
         String email = editTextEmail.getText().toString().trim();
@@ -76,10 +79,24 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful())
-                {
-                    Toast.makeText(getApplicationContext(),"User registration successful!", Toast.LENGTH_SHORT).show();
+                if(task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "User registration successful!", Toast.LENGTH_SHORT).show();
+                    Intent myIntent = new Intent(SignUpActivity.this, NewsFeed.class);
+                    myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(myIntent);
                 }
+                else
+                {
+                    if(task.getException() instanceof FirebaseAuthUserCollisionException)
+                    {
+                        Toast.makeText(getApplicationContext(), "This user is already registered", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Some error occured dude idk tbh", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
             }
         });
     }
