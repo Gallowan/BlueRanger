@@ -20,28 +20,28 @@ public class SportsSelection extends AppCompatActivity implements View.OnClickLi
         switch(view.getId())
         {
             case R.id.btn_basketball_m:
-                Intent myIntent = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent);
             case R.id.btn_basketball_f:
-                Intent myIntent2 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent2 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent2);
             case R.id.btn_baseball:
-                Intent myIntent3 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent3 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent3);
             case R.id.btn_football:
-                Intent myIntent4 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent4 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent4);
             case R.id.btn_soccer_m:
-                Intent myIntent5 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent5 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent5);
             case R.id.btn_soccer_f:
-                Intent myIntent6 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent6 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent6);
             case R.id.btn_volleyball_f:
-                Intent myIntent7 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent7 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent7);
             case R.id.btn_volleyball_m:
-                Intent myIntent8 = new Intent(SportsSelection.this, NewsFeed.class);
+                Intent myIntent8 = new Intent(SportsSelection.this, NewsFeedx.class);
                 SportsSelection.this.startActivity(myIntent8);
         }
     }

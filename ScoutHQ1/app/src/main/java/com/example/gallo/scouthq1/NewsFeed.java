@@ -24,10 +24,10 @@ public class NewsFeed extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_news_feed);
+        setContentView(R.layout.activity_news_feed);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mList = findViewById(R.id.field_news_feed_content);
+        mList = findViewById(R.id.list);
         adapter = new ArrayAdapter<>(this, R.layout.content_news_feed);
         new GetRssFeed().execute("http://www.espn.com/espn/rss/ncb/news");
 
@@ -46,6 +46,7 @@ public class NewsFeed extends AppCompatActivity {
                 Intent myIntent = new Intent(NewsFeed.this, SportsSelection.class);
                 NewsFeed.this.startActivity(myIntent);
                 return true;
+
             }
             public boolean onSwipeLeft(){
                 Intent myIntent = new Intent(NewsFeed.this, SportsSelection.class);

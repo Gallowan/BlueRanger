@@ -24,14 +24,17 @@
         </activity>
         <activity
             android:name=".SignUpActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".NewsFeed"
             android:label="@string/title_activity_news_feed"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NewsFeedx"
+            android:label="NewsFeedx" />
         <activity
             android:name=".SportsSelection"
-            android:label="SportsSelection"></activity>
+            android:label="SportsSelection" />
     </application>
 
 </manifest>
