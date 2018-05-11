@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if(task.isSuccessful())
                 {
                     Toast.makeText(getApplicationContext(), "User login successful!", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(LoginActivity.this, NewsFeed.class);
+                    Intent myIntent = new Intent(LoginActivity.this, NewsFeedOld.class);
                     myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(myIntent);
                 }

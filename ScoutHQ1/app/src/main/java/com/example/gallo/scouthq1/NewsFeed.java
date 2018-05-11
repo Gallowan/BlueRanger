@@ -1,67 +1,37 @@
 package com.example.gallo.scouthq1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+//import com.shirwa.simplistic_rss.RssItem;
+//import com.shirwa.simplistic_rss.RssReader;
 
-import java.io.Reader;
+import java.util.ArrayList;
 
-public class NewsFeed extends AppCompatActivity {
-
+public class NewsFeed extends Activity {
     private ListView mList;
     ArrayAdapter<String> adapter;
-    OnSwipeTouchListener onSwipeTouchListener;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_feed);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        mList = findViewById(R.id.list);
-        adapter = new ArrayAdapter<>(this, R.layout.content_news_feed);
-        new GetRssFeed().execute("http://www.espn.com/espn/rss/ncb/news");
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        onSwipeTouchListener = new OnSwipeTouchListener(){
-        //background.setOnTouchListener(new OnSwipeTouchListener(){
-            public boolean onSwipeRight(){
-                Intent myIntent = new Intent(NewsFeed.this, SportsSelection.class);
-                NewsFeed.this.startActivity(myIntent);
-                return true;
-
-            }
-            public boolean onSwipeLeft(){
-                Intent myIntent = new Intent(NewsFeed.this, SportsSelection.class);
-                NewsFeed.this.startActivity(myIntent);
-                return true;
-            }
-        };
+        setContentView(R.layout.content_news_feed);
+        mList = (ListView) findViewById(R.id.list);
+        adapter = new ArrayAdapter<String>(this, R.layout.basic_list_item);
+        Intent sportSelection = getIntent();
+        new GetRssFeed().execute(sportSelection.getStringExtra("urlString"));
     }
 
     private class GetRssFeed extends AsyncTask<String, Void, Void> {
         @Override
         protected Void doInBackground(String... params) {
             try {
-                FeedReader feedReader = new FeedReader(params[0]);
-                for (FeedSource item : feedReader.getItems())
+                FeedReader rssReader = new FeedReader(params[0]);
+                for (FeedSource item : rssReader.getItems())
                     adapter.add(item.getTitle());
             } catch (Exception e) {
                 Log.v("Error Parsing Data", e + "");
@@ -77,14 +47,4 @@ public class NewsFeed extends AppCompatActivity {
         }
     }
 
-    public void onClick(View view) {
-        switch(view.getId())
-        {
-            case R.id.fab:
-                Intent newsFeedIntent = new Intent(NewsFeed.this, SportsSelection.class);
-                NewsFeed.this.startActivity(newsFeedIntent);
-                break;
-
-        }
-    }
 }

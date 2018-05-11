@@ -81,7 +81,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(), "User registration successful!", Toast.LENGTH_SHORT).show();
-                    Intent myIntent = new Intent(SignUpActivity.this, NewsFeed.class);
+                    Intent myIntent = new Intent(SignUpActivity.this, NewsFeedOld.class);
                     myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(myIntent);
                 }
