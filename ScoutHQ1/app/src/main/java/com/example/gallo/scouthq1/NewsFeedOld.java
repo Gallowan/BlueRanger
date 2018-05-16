@@ -21,11 +21,11 @@ public class NewsFeedOld extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_feed);
+        setContentView(R.layout.activity_news_feed_old);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mList = findViewById(R.id.list);
-        adapter = new ArrayAdapter<>(this, R.layout.content_news_feed);
+        adapter = new ArrayAdapter<>(this, R.layout.activity_news_feed);
         new GetRssFeed().execute("http://www.espn.com/espn/rss/ncb/news");
 
         FloatingActionButton fab = findViewById(R.id.fab);

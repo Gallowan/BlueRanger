@@ -10,7 +10,6 @@ import android.widget.ListView;
 //import com.shirwa.simplistic_rss.RssItem;
 //import com.shirwa.simplistic_rss.RssReader;
 
-import java.util.ArrayList;
 
 public class NewsFeed extends Activity {
     private ListView mList;
@@ -19,7 +18,7 @@ public class NewsFeed extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_news_feed);
+        setContentView(R.layout.activity_news_feed);
         mList = (ListView) findViewById(R.id.list);
         adapter = new ArrayAdapter<String>(this, R.layout.basic_list_item);
         Intent sportSelection = getIntent();
